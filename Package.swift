@@ -15,11 +15,12 @@ let package = Package(
         .library(name: "GRDB", targets: ["GRDB"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/RxSwiftCommunity/RxGRDB", .exact("2.1.0"))
     ],
     targets: [
         .target(
             name: "GRDB",
-            dependencies: ["SQLCipher"],
+            dependencies: ["SQLCipher","RxGRDB"],
             path: "GRDB",
             cSettings: [
                  .define("SQLITE_HAS_CODEC"),
